@@ -10,20 +10,29 @@ int power(int m, int n);
 int main()
 {
   int i;
+  int k;
 
-  for (i = 0; i < 10; i++) {
-    printf("%d %d %d\n", i, power(2,i), power(-3,i));
-    printf("Internal Pow: %d %f %f\n", i, pow(2,i), pow(-3,i));
-  }
+  // calling functions only reference parameters
+  // except for arrays; arrays are passed in as an address
+  k = 10;
+  printf("k = %d\n", k);
+  printf("%d\n", power(2,k));
+  printf("Notice that k will not change even after power is called\n");
+  // so a reference is being passed
+  printf("k = %d\n", k);
+
+  // for (i = 0; i < 10; i++) {
+  //   printf("%d %d %d\n", i, power(2,i), power(-3,i));
+  //   printf("Internal Pow: %d %f %f\n", i, pow(2,i), pow(-3,i));
+  // }
   return 0;
 }
 
 // base to the power of n
 int power(int base, int n) {
-  int i, p;
+  int p;
 
-  p = 1;
-  for (i = 1; i < n; ++i) {
+  for (p = 1; n > 0; --n) {
     p = p * base;
   }
   return p;
