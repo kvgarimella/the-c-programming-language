@@ -12,13 +12,16 @@ int main()
   int length;
   char before[LIMIT], after[LIMIT];
 
-  if ((length = read_file(before, LIMIT)) > 0) {
+  if ((length = read_file(before, LIMIT)) > 0)
+  {
     printf("BEFORE:\n");
     printf("%s\n\n", before);
     printf("AFTER\n");
     remove_comments(before, after);
     printf("%s\n", after);
-  } else {
+  }
+  else
+  {
     printf("Error: File was not found.\n");
   }
 
@@ -31,9 +34,11 @@ int read_file(char arr[], int lim)
   FILE *file;
 
   file = fopen("cprogram.c", "r");
-  if (file) {
+  if (file)
+  {
     i = -1;
-    while ((c = getc(file)) != EOF && i < lim) {
+    while ((c = getc(file)) != EOF && i < lim)
+    {
       ++i;
       arr[i] = c;
     }
