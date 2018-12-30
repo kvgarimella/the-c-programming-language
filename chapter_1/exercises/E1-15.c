@@ -16,7 +16,7 @@ int main()
 {
   float celcius, fahr;
   int lower, upper, step;
-  lower = 0;
+  lower = -100;
   upper = 100;
   step = 5;
 
