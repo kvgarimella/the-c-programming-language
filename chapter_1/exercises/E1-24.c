@@ -30,7 +30,7 @@ int read_file(char arr[], int lim)
   int i, c;
   FILE *file;
 
-  file = fopen("cprogram.c", "r");
+  file = fopen("/Users/karthik/Desktop/first.c", "r");
   if (file) {
     i = -1;
     while ((c = getc(file)) != EOF && i < lim) {
@@ -66,8 +66,8 @@ void remove_comments(char before[], char after[])
     // skips single and multi-line comments
     if (c == '/' && before[i] == '/')
     {
-      while (before[i] != '\n')
-        ++i;
+      while (before[i++] != '\n')
+        {}
     }
     else if (c == '/' && before[i] == '*')
     {
