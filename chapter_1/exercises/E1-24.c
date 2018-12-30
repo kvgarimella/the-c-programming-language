@@ -30,7 +30,7 @@ int read_file(char arr[], int lim)
   int i, c;
   FILE *file;
 
-  file = fopen("/Users/karthik/Desktop/first.c", "r");
+  file = fopen("cprogram.c", "r");
   if (file) {
     i = -1;
     while ((c = getc(file)) != EOF && i < lim) {
