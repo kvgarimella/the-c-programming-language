@@ -134,20 +134,28 @@ void signed_min()
   printf("Computing Min of Signed Data Types...\n");
   for(iter = 0; iter < 64; iter++)
   {
+    
     h_next = 2 * h;
-    if (h_next < h) {
+    if (h_next < h)
+    {
       h_min = h_next;
     }
+
     i_next = 2 * i;
-    if (i_next < i) {
+    if (i_next < i)
+    {
       i_min = i_next;
     }
+
     j_next = 2 * j;
-    if (j_next < j) {
+    if (j_next < j)
+    {
       j_min = j_next;
     }
+
     k_next = 2 * k;
-    if (k_next < k) {
+    if (k_next < k)
+    {
       k_min = k_next;
     }
 
