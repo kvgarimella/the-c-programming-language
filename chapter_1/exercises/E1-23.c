@@ -33,7 +33,7 @@ int read_file(char arr[], int lim)
   int i, c;
   FILE *file;
 
-  file = fopen("E1-24.c", "r");
+  file = fopen("E1-23.c", "r");
   if (file)
   {
     i = -1;
