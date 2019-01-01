@@ -8,9 +8,11 @@ determine the ranges of char, short, int, and long variables
 
 */
 
+
+void signed_min();
 void signed_range();
 void unsigned_range();
-void signed_min();
+void floating_point_ranges();
 
 int main()
 {
@@ -21,6 +23,10 @@ int main()
   putchar('\n');
   putchar('\n');
   signed_min();
+  putchar('\n');
+  putchar('\n');
+  floating_point_ranges();
+
 
 }
 
@@ -118,6 +124,7 @@ void unsigned_range()
 
 void signed_min()
 {
+  // there is probably a better way to do this, but it works
   signed char  h, h_next, h_min;
   short i, i_next, i_min;
   int   j, j_next, j_min;
@@ -134,7 +141,7 @@ void signed_min()
   printf("Computing Min of Signed Data Types...\n");
   for(iter = 0; iter < 64; iter++)
   {
-    
+
     h_next = 2 * h;
     if (h_next < h)
     {
@@ -170,4 +177,14 @@ void signed_min()
   printf("char : %d vs. %d\n", i_min, SHRT_MIN);
   printf("char : %i vs. %i\n", j_min, INT_MIN);
   printf("char : %ld vs. %ld\n", k_min, LONG_MIN);
+}
+
+void floating_point_ranges()
+{
+  printf("Float Min : %.10e\n", FLT_MIN);
+  printf("Double Min: %.10e\n", DBL_MIN);
+  printf("Long Double Min: %.10Le\n", LDBL_MIN);
+  printf("Float Max : %.10e\n", FLT_MAX);
+  printf("Double Max: %.10e\n", DBL_MAX);
+  printf("Long Double Max: %.10Le\n", LDBL_MAX);
 }
