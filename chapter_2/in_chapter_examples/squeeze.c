@@ -4,7 +4,7 @@ void squeeze(char s[], int c);
 
 int main()
 {
-  char s[] = "abcdefg\0";
+  char s[] = "cccccatcccc\0";
   int c = 'c';
 
   squeeze(s, c);
