@@ -3,13 +3,13 @@
 
 void reverse (char[]);
 
-int main()
-{
-  char s[] = "Hello how are you doing?\0";
-  reverse(s);
-  printf("%s\n", s);
-  return 0;
-}
+// int main()
+// {
+  // char s[] = "Hello how are you doing?\0";
+  // reverse(s);
+  // printf("%s\n", s);
+  // return 0;
+// }
 
 void reverse(char s[])
 {
