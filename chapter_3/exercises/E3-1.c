@@ -1,18 +1,23 @@
 #include <stdio.h>
+#include <time.h>
 
 int binsearch(int, int[], int);
 
 int main()
 {
-  int x = 6;
-  int i = 10;
+  int x = 100;
+  int i = 10000;
   int v[i];
-  for (i = 0; i < 10; i++)
+  for (i = 0; i < 10000; i++)
   {
     v[i] = i*2;
   }
+  clock_t start = clock();
   int idx = binsearch(x, v, i);
-  printf("%d\n", idx);
+  clock_t end = clock();
+  float seconds = (float) (end - start) / CLOCKS_PER_SEC;
+  printf("%d <- index. Elapsed time: %f\n", idx, seconds);
+
   return 0;
 }
 
