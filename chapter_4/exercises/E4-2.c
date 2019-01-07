@@ -16,7 +16,8 @@ int main()
 double atof(char s[])
 {
   double val, power;
-  int i, sign, signed_exp, exp;
+  int i, sign, signed_exp;
+  int exp = 0;
 
   for (i = 0; isspace(s[i]); i++) {}
 
