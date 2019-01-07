@@ -20,7 +20,7 @@ int trim(char s[])
   {
     if (s[n] != ' ' && s[n] != '\t' && s[n] != '\n')
     {
-      break;
+      break; // breaks the innermost enclosed loop to be exited immediately.
     }
   }
   s[n+1] = '\0';
