@@ -16,17 +16,74 @@ double pop(void);
 double peek(void);
 void swap(void);
 void dup(void);
+void clear(void);
 
 
 int main()
 {
-  push(32.0);
-  push(-12.0);
-  dup();
-  printf("%f\n", peek());
-  push(-500.0);
-  swap();
-  printf("%f\n", peek());
+  int type;
+  double op2;
+  char s[MAXOP];
+
+  while ((type = getop(s)) != EOF)
+  {
+    switch (type)
+    {
+      case NUMBER:
+        push(atof(s));
+        break;
+      case '+':
+        push(pop() + pop());
+        break;
+      case '*':
+        push(pop() * pop());
+        break;
+      case '-':
+        op2 = pop();
+        push(pop() - op2);
+        break;
+      case '/':
+        op2 = pop();
+        if (op2 != 0.0)
+        {
+          push(pop() / op2);
+        }
+        else
+        {
+          printf("error: divide by zero.\n");
+        }
+        break;
+      case '%':
+        op2 = pop();
+        if (op2 != 0.0)
+        {
+          push((int) pop() % (int) op2);
+        }
+        else
+        {
+          printf("error: modulo by zero.\n");
+        }
+        break;
+      case 'p':
+        printf("\tTop Element: %.g\n", peek());
+        break;
+      case 'd':
+        dup();
+        break;
+      case 's':
+        swap();
+        break;
+      case 'c':
+        clear();
+        break;
+      case '\n':
+        printf("\t%.8g\n",pop());
+        break;
+      default:
+        printf("error: unknown command.\n");
+        break;
+    }
+  }
   return 0;
 }
 
@@ -78,8 +135,11 @@ void dup(void)
 
   if (sp > 0 && sp < MAXVAL)
   {
-    double top_elem = peek();
-    push(top_elem);
+    push(peek());
+  }
+  else
+  {
+    printf("error. stack either empty or full.\n");
   }
 }
 
