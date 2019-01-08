@@ -192,15 +192,25 @@ int getop(char s[])
   i = 0;
   if (islower(c))
   {
-    while (islower(s[++i] = c = getch())){}
-    s[i] = '\0';
+    c = getch();
+    if (islower(c))
+    {
+      s[++i] = c;
+      while (islower(s[++i] = c = getch())) {}
+      s[i] = '\0';
+    }
+    else
+    {
+      s[1] = '\0';
+    }
+    ungetch(c);
     if (strlen(s) > 1)
     {
       return MATH;
     }
     else
     {
-      return c;
+      return s[0];
     }
   }
   if (!isdigit(c) && c != '.' && c != '-')
