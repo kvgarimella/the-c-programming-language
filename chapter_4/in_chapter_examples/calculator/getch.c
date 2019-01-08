@@ -2,8 +2,8 @@
 #include "calc.h"
 #define BUFSIZE 100
 
-int buf[BUFSIZE];
-int bufp = 0;
+static int buf[BUFSIZE];
+static int bufp = 0;
 
 int getch(void)
 {
