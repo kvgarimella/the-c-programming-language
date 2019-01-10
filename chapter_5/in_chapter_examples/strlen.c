@@ -4,7 +4,9 @@ int strlen_p(char *);
 
 int main()
 {
-  char s[] = "hello, there\0";
+
+  char *s = "hello, there\0";
+  // char s[] = "hello, there\0"; equivalent to above
   printf("%d\n", strlen_p(s));
   printf("%d\n", strlen_p(&s[0]));
   printf("%d\n", strlen_p("hello, world!"));
